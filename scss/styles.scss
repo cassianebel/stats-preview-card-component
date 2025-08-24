@@ -9,9 +9,9 @@ $white: hsl(0, 0%, 100%);
 $transparent-white: hsla(0, 0%, 100%, 0.75);
 
 $breakpoints: (
-  "sm": 480px,
-  "md": 768px,
-  "lg": 1024px,
+  "sm": 30rem,
+  "md": 48rem,
+  "lg": 64rem,
 );
 
 @mixin respond($size) {
@@ -124,6 +124,7 @@ footer {
     inset: 0;
     background: $purple-500;
     mix-blend-mode: multiply;
+    opacity: 0.8;
   }
 }
 
@@ -147,12 +148,13 @@ footer {
   color: $purple-500;
 }
 
-.stats {
+ul.stats {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 2rem 0;
+  list-style: none;
   @include respond("md") {
     flex-direction: row;
     gap: 2rem;
@@ -161,11 +163,15 @@ footer {
   @include respond("lg") {
     margin: 1rem 0 0 0;
   }
-  p {
+  li {
+    color: $transparent-white;
     text-transform: uppercase;
     font-family: "Lexend Deca", sans-serif;
     letter-spacing: 2px;
     font-size: 0.9rem;
+    line-height: 1.6;
+    font-weight: 300;
+    margin: 1rem 0;
   }
   strong {
     display: block;
